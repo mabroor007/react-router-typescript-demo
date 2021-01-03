@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
+
 export default function HomePage() {
   return (
-    <div>
+    <div className="win">
+      <Link to="/">HomePage</Link> | <Link to="/About">AboutPage</Link>
       <h3>Home Page</h3>
       <p>
         In this example we have 3 “pages” handled by the router: a home page, an

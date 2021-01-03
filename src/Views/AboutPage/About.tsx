@@ -1,9 +1,8 @@
-import { RouteComponentProps } from "react-router-dom";
+import { Link, RouteComponentProps } from "react-router-dom";
 
 interface Props extends RouteComponentProps {}
 
 export const AboutPage: React.FC<Props> = ({ history }) => {
-
   const handleGotoSpecificAboutPage = () => {
     history.push("/About/mabroor", {
       peoples: ["Tina", "Mina", "Shiela"],
@@ -16,7 +15,8 @@ export const AboutPage: React.FC<Props> = ({ history }) => {
   };
 
   return (
-    <div>
+    <div className="win">
+      <Link to="/">HomePage</Link> | <Link to="/About">AboutPage</Link>
       <h3>AboutPage</h3>
       <button onClick={handleGotoSpecificAboutPage}>
         Go to Specific home page
