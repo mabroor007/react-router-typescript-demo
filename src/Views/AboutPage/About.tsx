@@ -1,4 +1,12 @@
-import { Link, RouteComponentProps } from "react-router-dom";
+import React from "react";
+import { RouteComponentProps } from "react-router-dom";
+import Nav from "../../Components/NavigationBar";
+import {
+  H3Styled,
+  PStyled,
+  ToSpecificButton,
+} from "../../StyledComponents/Styled";
+import { Page } from "../../StyledComponents/Window.styled";
 
 interface Props extends RouteComponentProps {}
 
@@ -15,13 +23,19 @@ export const AboutPage: React.FC<Props> = ({ history }) => {
   };
 
   return (
-    <div className="win">
-      <Link to="/">HomePage</Link> | <Link to="/About">AboutPage</Link>
-      <h3>AboutPage</h3>
-      <button onClick={handleGotoSpecificAboutPage}>
-        Go to Specific home page
-      </button>
-      <img src="http://picsum.photos/500" alt="A random image" />
-    </div>
+    <Page>
+      <Nav />
+      <H3Styled>AboutPage</H3Styled>
+      <PStyled>
+        In this example we have 3 “pages” handled by the router: a home page, an
+        about page, and a users page. As you click around on the differents, the
+        router renders the matching Note: Behind the scenes a renders an with a
+        real href, so people using the keyboard for navigation or screen readers
+        will still be able to use this app
+      </PStyled>
+      <ToSpecificButton onClick={handleGotoSpecificAboutPage}>
+        Go to Specific about page
+      </ToSpecificButton>
+    </Page>
   );
 };
